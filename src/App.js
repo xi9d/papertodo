@@ -9,8 +9,10 @@ function App() {
   }
   return (
       <> 
+      <h1>Product Todo</h1>
       <InputComponent addItem={addItem}/>
       <DisplayComponent items={items}/>
+      <footer>Foxbash company</footer>
       </>
   );
 }
