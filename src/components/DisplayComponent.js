@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 
 function DisplayComponent({ items }) {
- const [checked, setChecked] = useState([]);
- const handleCheck = (id) =>{
-  setChecked(...checked,id);
- };
+  const handleSave = () =>{
+    localStorage.setItem("todos",items);
+    alert(`You have saved ${items.length}`)
+  }
+  const handleDelete =() =>{
+    localStorage.removeItem("todos");
+    items ="";
+  }
   return (
     <div>
     <ul>
-        {items && items.map((item =>
-            <li key={item.id}
-            onClick={() =>handleCheck(item.id)}
-            className={checked ? "text-red-500":"text-green-500"}>{item}</li>
+        {items && items.map((item, index )=>(
+            <li key={index}
+            className="">{item}</li>
         ))}
+        <button onClick={handleSave}
+      className="border-2 rounded-md p-2 border-slate-900 m-2 ">Save them</button>
+      <button onClick={handleDelete}
+      className="border-2 rounded-md p-2 border-slate-900 m-2 ">Delete everything</button>
     </ul>
-    <p>There are {items.length}</p>
+   
     </div>
   );
 }
