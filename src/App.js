@@ -20,13 +20,15 @@ function App() {
  },[])
 
   return (
-      <div className="max-w-2xl m-auto mt-20 border  border-slate-900 p-10 text-center h-5/6"> 
+    <div className="">
+      <div className="max-w-2xl m-auto mt-20 border rounded-md bg-white shadow-lg border-slate-900 p-10 text-center h-5/6 "> 
       <h1 className="font-semibold text-slate-900 uppercase">Paper Todo</h1>
       <p className="left-0 relative">There are {items.length} items!!
       </p>
       <InputComponent addItem={addItem}/>
       <DisplayComponent items={items}/>
-      <footer className="fixed">Foxbash company</footer>
+      <footer className="fixed text-orange-600">Foxbash company</footer>
+      </div>
       </div>
   );
 }

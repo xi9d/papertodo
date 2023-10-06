@@ -18,9 +18,10 @@ function InputComponent({addItem}) {
           <input type="text"
           value={item}
           onChange={handleOnChange}
+          
           className="border-2 rounded-md border-slate-900 text-slate-800 m-10 text-center h-10 font-mono"/>
           <button onClick={handleSubmit}
-          className="border rounded-md  border-slate-900 text-center capitalize py-2 px-5">Add</button>
+          className="border rounded-md  border-slate-900 text-center capitalize py-2 px-5 font-bold text-white bg-yellow-700">Add</button>
         </>
   );
 }
